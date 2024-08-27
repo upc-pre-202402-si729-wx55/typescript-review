@@ -21,7 +21,7 @@ export class SalesOrder {
         return this._customerId;
     }
 
-    addItem = (orderId: string, productId: string, quantity: number, unitPrice: number) => this._items.push(new SalesOrderItem(orderId, productId, quantity, unitPrice));
+    addItem = (productId: string, quantity: number, unitPrice: number) => this._items.push(new SalesOrderItem(this._id, productId, quantity, unitPrice));
 
     calculateTotalPrice = (): number => this._items.reduce((total, item) => total + item.calculateItemPrice(), 0);
 
